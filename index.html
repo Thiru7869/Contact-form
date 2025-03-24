@@ -10,7 +10,9 @@
 
     <div class="container">
         <h2>Contact Form</h2>
-        <form id="contact-form">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">            
+            <input type="hidden" name="access_key" value="6e452dff-1fa0-4258-969a-a6b610ab95a8">
+
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -35,9 +37,12 @@
                 <span class="error-message"></span>
             </div>
 
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" style="display: none;">
+
             <button type="submit" id="submit-btn">
                 <span class="btn-text">Send Message</span>
-                <span class="btn-loader"></span>
+                <span class="btn-loader" style="display: none;">Loading...</span>
             </button>
         </form>
     </div>
